@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>your-expanse</title>
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <section class="flex justify-center mt-10">
+        <div class="w-[35%] bg-red-100 rounded-xl shadow-xl">
+            <div class="">
+                <h2 class="text-[25px] font-bold text-center">INCOME</h2>
+                <div class="flex justify-center items-center">
+                    <div class="w-[85%] flex justify-between py-1">
+                        <label class="w-[25%]">Salary :</label>
+                        <input id="incomeSalary"
+                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            type="text" placeholder="">
+                    </div>
+                </div>
+                <h2 class="text-[25px] font-bold text-center">EXPENSES</h2>
+                <div class="flex justify-center items-center">
+                    <div class="w-[85%] flex justify-between py-1">
+                        <label class="w-[25%]">Food :</label>
+                        <input id="expansesFood"
+                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            type="text">
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <div class="w-[85%] flex justify-between py-1">
+                        <label class="w-[25%]">Cloth :</label>
+                        <input id="expansesCloth"
+                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            type="text">
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <div class="w-[85%] flex justify-between py-1">
+                        <label class="w-[25%]">Medicine :</label>
+                        <input id="expansesMedicine"
+                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            type="text">
+                    </div>
+                </div>
+                <div class="flex justify-center items-center">
+                    <div class="w-[85%] flex justify-between py-1">
+                        <label class="w-[25%]">Others :</label>
+                        <input id="expansesOthers"
+                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            type="text">
+                    </div>
+                </div>
+
+                <div class="flex justify-center items-center">
+                    <div class="w-[85%]">
+                        <h2 class="text-[25px] font-bold text-center">SAVING</h2>
+                        <input id="savingPercentage"
+                            class="w-[100%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors text-center"
+                            type="text" placeholder="%">
+                    </div>
+                </div>
+
+                <div class="flex justify-center py-3">
+                    <button id="calculate" class="py-2 px-5 rounded-lg bg-gray-600 font-bold">CALCULATE</button>
+                </div>
+
+                <div class="text-center">
+                    <h4 class="text-[16px] font-bold py-2">Total Expanse : $ <span id="expanses">000</span></h4>
+                    <h4 class="text-[16px] font-bold py-2">Total Saving : $ <span id="totalSave">000</span></h4>
+                    <h4 class="text-[16px] font-bold py-2">Remaining Money : $ <span id="remainingMoney">000</span></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script>
+        document.getElementById('calculate').addEventListener('click', function () {
+            const salary = parseFloat(document.getElementById('incomeSalary').value);
+
+            const food = parseFloat(document.getElementById('expansesFood').value);
+            const cloth = parseFloat(document.getElementById('expansesCloth').value);
+            const medicine = parseFloat(document.getElementById('expansesMedicine').value);
+            const others = parseFloat(document.getElementById('expansesOthers').value);
+
+            const save = parseFloat(document.getElementById('savingPercentage').value)
+
+            const totalExpanses = food + cloth + medicine + others;
+            const remaningBalance = salary - totalExpanses;
+            const saving = remaningBalance * save / 100;
+
+
+            document.getElementById('expanses').innerText = totalExpanses;
+            document.getElementById('totalSave').innerText = saving;
+            document.getElementById('remainingMoney').innerText = remaningBalance;
+
+        })
+    </script>
+</body>
+
+</html>
