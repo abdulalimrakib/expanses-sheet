@@ -7,51 +7,52 @@
     <title>your-expanse</title>
     <link rel="stylesheet" href="/css/tailwind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section class="flex justify-center mt-10">
-        <div class="w-[35%] bg-red-100 rounded-xl shadow-xl">
-            <div class="">
+    <section id="recivingPart" class="">
+        <div class="flex justify-center mt-10">
+            <div class="w-full mx-2 md:mx-0 md:w-[35%] bg-red-100 rounded-xl shadow-xl">
                 <h2 class="text-[25px] font-bold text-center">INCOME</h2>
                 <div class="flex justify-center items-center">
                     <div class="w-[85%] flex justify-between py-1">
-                        <label class="w-[25%]">Salary :</label>
+                        <label class="w-[25%] py-2 font-bold">SALARY :</label>
                         <input id="incomeSalary"
-                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
-                            type="text" placeholder="">
+                            class="w-[75%] indent-3 py-2 focus:outline-none bg-black text-white text-[18px] transition-colors rounded-md"
+                            type="text" placeholder="Enter Your Salary">
                     </div>
                 </div>
                 <h2 class="text-[25px] font-bold text-center">EXPENSES</h2>
                 <div class="flex justify-center items-center">
                     <div class="w-[85%] flex justify-between py-1">
-                        <label class="w-[25%]">Food :</label>
+                        <label class="w-[25%] py-2 font-bold">FOOD :</label>
                         <input id="expansesFood"
-                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            class="w-[75%] indent-3 py-2 focus:outline-none bg-black text-white text-[18px] transition-colors rounded-md"
                             type="text">
                     </div>
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-[85%] flex justify-between py-1">
-                        <label class="w-[25%]">Cloth :</label>
+                        <label class="w-[25%] py-2 font-bold">CLOTH :</label>
                         <input id="expansesCloth"
-                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            class="w-[75%] indent-3 py-2 focus:outline-none bg-black text-white text-[18px] transition-colors rounded-md"
                             type="text">
                     </div>
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-[85%] flex justify-between py-1">
-                        <label class="w-[25%]">Medicine :</label>
+                        <label class="w-[25%] py-2 font-bold">MEDICINE :</label>
                         <input id="expansesMedicine"
-                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            class="w-[75%] indent-3 py-2 focus:outline-none bg-black text-white text-[18px] transition-colors rounded-md"
                             type="text">
                     </div>
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-[85%] flex justify-between py-1">
-                        <label class="w-[25%]">Others :</label>
+                        <label class="w-[25%] py-2 font-bold">OTHERS :</label>
                         <input id="expansesOthers"
-                            class="w-[75%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors"
+                            class="w-[75%] indent-3 py-2 focus:outline-none bg-black text-white text-[18px] transition-colors rounded-md"
                             type="text">
                     </div>
                 </div>
@@ -60,7 +61,7 @@
                     <div class="w-[85%]">
                         <h2 class="text-[25px] font-bold text-center">SAVING</h2>
                         <input id="savingPercentage"
-                            class="w-[100%] py-1 focus:outline-none bg-red-100 border-b-2 focus:border-red-400 focus:border-b-2 transition-colors text-center"
+                            class="w-[100%] indent-3 py-2 focus:outline-none bg-black text-white text-[18px] transition-colors rounded-md text-center"
                             type="text" placeholder="%">
                     </div>
                 </div>
@@ -68,17 +69,41 @@
                 <div class="flex justify-center py-3">
                     <button id="calculate" class="py-2 px-5 rounded-lg bg-gray-600 font-bold">CALCULATE</button>
                 </div>
-
-                <div class="text-center">
-                    <h4 class="text-[16px] font-bold py-2">Total Expanse : $ <span id="expanses">000</span></h4>
-                    <h4 class="text-[16px] font-bold py-2">Total Saving : $ <span id="totalSave">000</span></h4>
-                    <h4 class="text-[16px] font-bold py-2">Remaining Money : $ <span id="remainingMoney">000</span></h4>
-                </div>
             </div>
         </div>
     </section>
 
+    <section class="mt-10 mx-5 md:mx-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-16">
+            <div class="bg-green-950 p-5 text-white">
+                <h3 class="font-bold">TOTAL INCOME</h3>
+                <hr>
+                <p></p>
+                <h2 class="text-[22px] font-bold pt-5">$ <span id="totalIncome">000</span></h2>
+            </div>
 
+            <div class="bg-red-950 p-5 text-white">
+                <h3 class="font-bold">TOTAL EXPENSES</h3>
+                <hr>
+                <p></p>
+                <h2 class="text-[22px] font-bold pt-5">$ <span id="expanses">000</span></h2>
+            </div>
+
+            <div class="bg-emerald-950 p-5 text-white">
+                <h3 class="font-bold">TOTAL SAVE</h3>
+                <hr>
+                <p></p>
+                <h2 class="text-[22px] font-bold pt-5">$ <span id="totalSave">000</span></h2>
+            </div>
+
+            <div class="bg-lime-950 p-5 text-white">
+                <h3 class="font-bold">REMAINING INCOME</h3>
+                <hr>
+                <p></p>
+                <h2 class="text-[22px] font-bold pt-5">$ <span id="remainingMoney">000</span></h2>
+            </div>
+        </div>
+    </section>
 
 
     <script>
@@ -93,14 +118,41 @@
             const save = parseFloat(document.getElementById('savingPercentage').value)
 
             const totalExpanses = food + cloth + medicine + others;
-            const remaningBalance = salary - totalExpanses;
-            const saving = remaningBalance * save / 100;
+            const Balance = salary - totalExpanses;
+            const saving = Balance * save / 100;
+            const remaningBalance = Balance - saving;
 
 
+
+            if (totalExpanses > salary) {
+                alert("Your Expanses Is More Than Income !!");
+                return;
+            }
+
+            if (isNaN(salary)) {
+                alert("Please Enter Your Income Salary")
+                return;
+            }
+
+            if (isNaN(food) || isNaN(cloth) || isNaN(medicine) || isNaN(others)) {
+                alert("Please Add Your Expanses !!")
+                return;
+            }
+
+            if (isNaN(save)) {
+                alert("Please Add Your Saving !!")
+                return;
+            }
+
+            if (salary < 0 || food < 0 || cloth < 0 || medicine < 0 || others < 0 || save < 0) {
+                alert("Wrong Input !!")
+                return;
+            }
+
+            document.getElementById('totalIncome').innerText = salary;
             document.getElementById('expanses').innerText = totalExpanses;
             document.getElementById('totalSave').innerText = saving;
             document.getElementById('remainingMoney').innerText = remaningBalance;
-
         })
     </script>
 </body>
